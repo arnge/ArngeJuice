@@ -8,4 +8,5 @@ func _ready():
 	"""
 
 	# Once we're done with everything, go act 0!
-	get_tree().change_scene_to(load("res://content/act_0/Act0.tscn"))
+	if get_tree().change_scene_to(load("res://content/act_0/Act0.tscn")) == OK:
+		pass
