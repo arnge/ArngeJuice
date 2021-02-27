@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://content/act_0/act_0.gd" type="Script" id=1]
+[ext_resource path="res://content/Act0/Act0.gd" type="Script" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 
 [sub_resource type="PlaneMesh" id=1]
