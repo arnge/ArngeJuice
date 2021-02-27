@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="CSharpScript" id=1]
+script/source = "using Godot;
+
+namespace ArngeJuice
+{
+    public class Launch : Node
+    {
+    }
+}
+"
+
+[node name="Launch" type="Node"]
+script = SubResource( 1 )
