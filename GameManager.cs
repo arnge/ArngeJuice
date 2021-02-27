@@ -13,7 +13,7 @@ namespace ArngeJuice
         {
             if (!(inputEvent is InputEventKey eventKey)) return;
 
-            if (eventKey.Pressed && eventKey.Scancode == (int) KeyList.Escape)
+            if (eventKey.Pressed && eventKey.Scancode == (int)KeyList.Escape)
                 GetTree().ChangeScene("res://TitleScreen.tscn");
         }
     }

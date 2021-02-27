@@ -37,12 +37,12 @@ namespace ArngeJuice
                     var scriptFilePath = $"res://Content/{dir.Name}/{scriptPath}";
                     var script = GD.Load(scriptFilePath);
                     var contentId = Guid.NewGuid().ToString();
-                    var node = new Node {Name = dir.Name};
+                    var node = new Node { Name = dir.Name };
                     node.Set("ContentId", contentId);
                     var nodeId = node.GetInstanceId();
 
                     node.SetScript(script);
-                    node = (Node) GD.InstanceFromId(nodeId);
+                    node = (Node)GD.InstanceFromId(nodeId);
 
                     AddContent(node);
                 }
