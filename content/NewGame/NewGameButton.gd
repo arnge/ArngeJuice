@@ -2,7 +2,7 @@ extends Button
 
 
 func handle_button_pressed():
-	if get_tree().change_scene_to(load("res://content/NewGame/NewGame.tscn")) == OK:
+	if get_tree().change_scene_to(load("res://Content/NewGame/NewGame.tscn")) == OK:
 		pass
 
 

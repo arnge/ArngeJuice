@@ -24,7 +24,7 @@ namespace ArngeJuice
 
         private void LoadLocalContent()
         {
-            var contentPath = ProjectSettings.GlobalizePath("res://content");
+            var contentPath = ProjectSettings.GlobalizePath("res://Content");
             var directory = Directory.CreateDirectory(contentPath);
             foreach (var dir in directory.EnumerateDirectories())
             {
