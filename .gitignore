@@ -9,6 +9,7 @@ export_presets.cfg
 # editor shit
 .idea
 .vscode
+.ionide
 
 # Mono-specific ignores
 .mono/

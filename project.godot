@@ -22,6 +22,8 @@ config/icon="res://icon.png"
 GameManager="*res://GameManager.tscn"
 ContentManager="*res://ContentManager.tscn"
 SceneManager="*res://SceneManager.tscn"
+PlayerManager="*res://PlayerManager.tscn"
+SteamManager="*res://SteamManager.tscn"
 
 [display]
 

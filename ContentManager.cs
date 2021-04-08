@@ -29,26 +29,30 @@ namespace ArngeJuice
             foreach (var dir in directory.EnumerateDirectories())
             {
                 var configFile = new ConfigFile();
-
-                try
+                var configFiles = dir.GetFiles().Where(info => info.Name.Equals("content.cfg"));
+                var hasConfigFile = configFiles.Count() > 0;
+                if (hasConfigFile)
                 {
-                    configFile.Load(dir.GetFiles().Single(info => info.Name.Equals("content.cfg")).FullName);
-                    var scriptPath = configFile.GetValue("content", "script", "").ToString();
-                    var scriptFilePath = $"res://Content/{dir.Name}/{scriptPath}";
-                    var script = GD.Load(scriptFilePath);
-                    var contentId = Guid.NewGuid().ToString();
-                    var node = new Node { Name = dir.Name };
-                    node.Set("ContentId", contentId);
-                    var nodeId = node.GetInstanceId();
+                    try
+                    {
+                        configFile.Load(configFiles.First().FullName);
+                        var scriptPath = configFile.GetValue("content", "script", "").ToString();
+                        var scriptFilePath = $"res://Content/{dir.Name}/{scriptPath}";
+                        var script = GD.Load(scriptFilePath);
+                        var contentId = Guid.NewGuid().ToString();
+                        var node = new Node { Name = dir.Name };
+                        node.Set("ContentId", contentId);
+                        var nodeId = node.GetInstanceId();
 
-                    node.SetScript(script);
-                    node = (Node)GD.InstanceFromId(nodeId);
+                        node.SetScript(script);
+                        node = (Node)GD.InstanceFromId(nodeId);
 
-                    AddContent(node);
-                }
-                catch
-                {
-                    // ignored
+                        AddContent(node);
+                    }
+                    catch
+                    {
+                        // ignored
+                    }
                 }
             }
         }
