@@ -4,7 +4,6 @@ onready var body = $PlayerKinematicBody
 onready var player_bottom = $PlayerKinematicBody/PlayerBottom
 onready var camera_rig = $CameraRig
 onready var camera = $CameraRig/PlayerCamera
-onready var cursor = $PlayerKinematicBody/Cursor
 
 export var speed = 160
 export var walking_speed = 90
@@ -17,7 +16,7 @@ var velocity = Vector3()
 
 
 func _ready() -> void:
-	print("Player ready")
+	pass
 
 
 func _process(_delta: float) -> void:
