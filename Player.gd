@@ -47,6 +47,7 @@ func move_camera_with_body() -> void:
 
 
 func move(delta: float) -> void:
+	move_direction = Vector3()
 	var camera_basis = camera.global_transform.basis
 	if Input.is_action_pressed("player_move_up"):
 		move_direction -= camera_basis.z
