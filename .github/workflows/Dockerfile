@@ -45,3 +45,5 @@ RUN bash /opt/butler/getbutler.sh
 RUN /opt/butler/bin/butler -V
 
 ENV PATH="/opt/butler/bin:${PATH}"
+
+ENTRYPOINT ["sh", "-c", "echo $GITHUB_SHA"]

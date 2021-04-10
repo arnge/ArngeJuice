@@ -9,8 +9,6 @@ jobs:
   export-windows:
     name: Windows Export
     runs-on: ubuntu-latest
-    container:
-      image: ./Dockerfile
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -21,6 +19,7 @@ jobs:
           mkdir -v -p ~/.local/share/godot/templates
           mv /root/.local/share/godot/templates/${GODOT_VERSION}.stable ~/.local/share/godot/templates/${GODOT_VERSION}.stable
       - name: Windows Build
+        uses: ./Dockerfile
         run: |
           mkdir -v -p build/windows
           cd $EXPORT_NAME
