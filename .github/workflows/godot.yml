@@ -11,6 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: docker.pkg.github.com/sean-clayton/godot-docker/godot:3.3-rc8
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
