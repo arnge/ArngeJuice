@@ -4,7 +4,7 @@ on: [push]
 env:
   GODOT_VERSION: 3.3
   RELEASE_NAME: rc8
-  EXPORT_NAME: ArngeJuice
+  EXPORT_NAME: arnge_juice
 
 jobs:
   export-windows:
