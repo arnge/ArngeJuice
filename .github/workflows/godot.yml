@@ -9,6 +9,8 @@ jobs:
   export-windows:
     name: Windows Export
     runs-on: ubuntu-latest
+    container:
+      image: docker.pkg.github.com/sean-clayton/godot-docker/godot:3.3-rc8
     steps:
       - name: Checkout
         uses: actions/checkout@v2
