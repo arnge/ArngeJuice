@@ -1,5 +1,5 @@
 name: "godot-ci export"
-on: push
+on: [push]
 
 env:
   GODOT_VERSION: 3.3
@@ -15,9 +15,6 @@ jobs:
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - name: Install LFS
-        run: |
-          git lfs install
       - name: Checkout
         uses: actions/checkout@v2
         with:
