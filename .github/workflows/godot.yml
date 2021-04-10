@@ -17,7 +17,7 @@ jobs:
     steps:
       - name: Install LFS
         run: |
-          git install lfs
+          git lfs install
       - name: Checkout
         uses: actions/checkout@v2
         with:
