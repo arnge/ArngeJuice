@@ -1,12 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://TitleScreen.cs" type="Script" id=1]
 [ext_resource path="res://ExitGameButton.cs" type="Script" id=2]
+[ext_resource path="res://NewGameButton.gd" type="Script" id=3]
 
 [node name="TitleScreen" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -20,17 +19,20 @@ margin_right = 1920.0
 margin_bottom = 1080.0
 
 [node name="TitleScreenButtons" type="VBoxContainer" parent="MarginContainer/CenterContainer"]
-margin_left = 921.0
-margin_top = 528.0
-margin_right = 998.0
-margin_bottom = 552.0
+margin_left = 919.0
+margin_top = 518.0
+margin_right = 1001.0
+margin_bottom = 562.0
 
-[node name="CustomButtonList" type="VBoxContainer" parent="MarginContainer/CenterContainer/TitleScreenButtons"]
-margin_right = 77.0
+[node name="NewGameButton" type="Button" parent="MarginContainer/CenterContainer/TitleScreenButtons"]
+margin_right = 82.0
+margin_bottom = 20.0
+text = "New Game"
+script = ExtResource( 3 )
 
 [node name="ExitGameButton" type="Button" parent="MarginContainer/CenterContainer/TitleScreenButtons"]
-margin_top = 4.0
-margin_right = 77.0
-margin_bottom = 24.0
+margin_top = 24.0
+margin_right = 82.0
+margin_bottom = 44.0
 text = "Exit Game"
 script = ExtResource( 2 )
