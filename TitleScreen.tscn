@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://ExitGameButton.cs" type="Script" id=2]
+[ext_resource path="res://ExitGameButton.gd" type="Script" id=1]
 [ext_resource path="res://NewGameButton.gd" type="Script" id=3]
 
 [node name="TitleScreen" type="Control"]
@@ -35,4 +35,4 @@ margin_top = 24.0
 margin_right = 82.0
 margin_bottom = 44.0
 text = "Exit Game"
-script = ExtResource( 2 )
+script = ExtResource( 1 )
