@@ -9,7 +9,7 @@ export var speed = 160
 export var walking_speed = 90
 export var friction = 0.8
 
-var current_speed = speed
+onready var current_speed = speed
 var walking = false
 var move_direction = Vector3()
 var velocity = Vector3()
