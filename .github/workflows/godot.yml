@@ -1,0 +1,33 @@
+name: "godot-ci export"
+on: [push]
+
+env:
+  GODOT_VERSION: 3.3
+  RELEASE_NAME: rc8
+  EXPORT_NAME: arnge_juice
+
+jobs:
+  export-windows:
+    name: Windows Export
+    runs-on: ubuntu-latest
+    container:
+      image: docker.pkg.github.com/sean-clayton/godot-docker/godot:3.3-rc8
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup
+        run: |
+          mkdir -v -p ~/.local/share/godot/templates
+          mv /root/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME}.mono ~/.local/share/godot/templates/${GODOT_VERSION}.${RELEASE_NAME}.mono
+      - name: Windows Build
+        run: |
+          mkdir -v -p build/windows
+          godot -v --export "Windows Desktop" build/windows/$EXPORT_NAME.exe
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: windows
+          path: build/windows
